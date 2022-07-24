@@ -3,8 +3,21 @@ package main
 import "fmt"
 
 func main() {
-	x := make(map[int]int)
-	x[1] = 10
-	fmt.Println(x[1])
-	delete(x, 3)
+	elements := map[string]map[string]string{
+		"H": {
+			"name":  "Hydrogen",
+			"state": "gas",
+		},
+	}
+
+	if element, ok := elements["H"]; ok {
+		fmt.Printf(
+			"The name is %s and state at room temperature is %s",
+			element["name"],
+			element["state"],
+		)
+	} else {
+		fmt.Println("Lookup not found")
+	}
+
 }
